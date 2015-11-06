@@ -19,7 +19,7 @@
 
 #include "ShapeT.h"
 #include "global.h"
-#include <glut.h>
+#include <GL/glut.h>
 
 template <typename M> class MatchT: public ShapeT<M>
 {
