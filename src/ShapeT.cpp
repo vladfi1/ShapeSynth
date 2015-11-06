@@ -61,7 +61,8 @@ template <typename M> bool ShapeT<M>::openMesh(const char* _filename)
     
     indexMap_.clear();
     
-    if ( OpenMesh::IO::read_mesh(mesh_, _filename, opt, false, &indexMap_))
+    //if ( OpenMesh::IO::read_mesh(mesh_, _filename, opt, false, &indexMap_))
+    if ( OpenMesh::IO::read_mesh(mesh_, std::string(_filename), opt, false))
     {
         // Update face and vertex normals
         if ( ! opt.check( OpenMesh::IO::Options::FaceNormal ) )
