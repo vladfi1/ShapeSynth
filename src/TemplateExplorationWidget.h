@@ -282,18 +282,19 @@ private slots:
 
 signals:
     
-#if defined (APPLE)
+//#if defined (APPLE)
 
     //void setPlotSamples(const QVector<QPointF>& Samples, QString& Title);
 
     void setPlotSamples(const std::vector<OpenMesh::Vec3f>& _samples, const QString& _title);
             
+/*
 #elif defined (UNIX)
 
     void setPlotSamples(const QVector<QwtPoint3D>& Samples, QString& Title);
 
 #endif
-
+*/
     void setEdges(const QVector<QPointF>& Samples, const std::vector<double>& Distances);
 
     void addPlotMarker(const QPointF& sample, const QColor& color, int _index);
