@@ -1,0 +1,86 @@
+// Add the path to the collection file here. can be relative to the application
+COLLECTION_FILE_PATH = ../../../data/chairs.match_coll
+// Path to the folder which contains the matlab scripts. dont forget the / in the end or it wont work
+MATLAB_FILE_PATH = ../../matlab-files/
+MATLAB_APP_PATH = /Applications/MATLAB_R2013b.app/bin/matlab
+
+
+// The following are not really paths but we assume that the collection file, e.g chairs.match_coll 
+// will be in the same folder as a folder named chairs/ which in turn contains folders matches/ and so on
+// so next to folder matches we will have the following named folders which contain our meshes, template icons, match icons etc
+MESH_PATH = meshes-segmented-aligned
+TEMPLATE_ICON_PATH = img_templates
+MATCH_ICON_PATH = img_matches
+MODEL_ICON_PATH = img_models
+
+RESULTS_PATH = ./results/
+
+// if u want to switch to light debug use 1, or full debug (very messy) use 2
+DEBUG_MODE = 0
+
+PRELOAD_MODELS = 0
+
+// For dataset use 0 for chairs, 1 for bikes, 2 for helicopters, 3 for planes
+DATASET = 0
+FIT_ERROR = 30
+MAX_NUM_CLUSTERS_TO_SHOW = 5
+MIN_CLUSTER_POPULATION = 10
+
+NUM_NEAREST_NEIGHBOURS = 10
+NUM_PARAMS_BOX = 6
+NUM_PARAMS_POS = 3
+
+// embedding 0 means PCA just use this for now
+EMBEDDING_MODE = 0
+
+NUM_EQUATIONS_SYMMETRY = 7
+NUM_EQUATIONS_CONTACT = 3
+
+
+// u can safely ignore these, leave them as they are
+CREATE_SLW = 1
+CREATE_TEW = 1
+CREATE_QWTPLOTW = 0
+CREATE_TEVW = 1
+CREATE_MVW = 1
+CREATE_LOGW = 1
+
+SHOW_SLW = 0
+SHOW_TEW = 1
+SHOW_QWTPLOTW = 0
+SHOW_TEVW = 1
+SHOW_MVW = 1
+SHOW_LOGW = 1
+
+NOF_MVW = 1 
+
+SAVE_DESCRIPTOR = 1
+ALIGN_MATCH_POINTS_BEFORE_SAVING = 1
+ALIGN_MATCH_MESH_BEFORE_SAVING = 0
+NORMALISE_MATCH_MESH_BEFORE_SAVING = 0
+RECOMPUTE_BOXES_BEFORE_SAVING = 0
+
+OPEN_DESCRIPTOR = 0
+ALIGN_MATCH_MESH_AFTER_OPENING = 0
+NORMALISE_MATCH_MESH_AFTER_OPENING = 0
+OPEN_ORIGINAL_MESH = 0
+OPEN_PART_MESHES_AFTER_OPENING_MATCH_MESH = 1
+
+APP_WINDOW_WIDTH = 1200
+APP_WINDOW_HEIGHT = 600
+
+CLUSTER_VIEW_ICON_HEIGHT = 150
+CLUSTER_VIEW_ICON_PADDING = 30
+CLUSTER_VIEW_ICON_FRAME_THICKNESS = 5
+CLUSTER_VIEW_ICON_SPACING = 10
+
+EXPLORATION_VIEW_ICON_HEIGHT = 100
+
+// completely ignore these
+PART_DESC_SIZE_ROWS = 100
+PART_DESC_SIZE_COLS = 100
+PART_DESC_SIZE = 100
+
+
+
+
