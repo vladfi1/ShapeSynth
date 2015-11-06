@@ -11,9 +11,8 @@
 # (To distributed this file outside of CMake, substitute the full
 #  License text for the above reference.)
 
-FIND_PATH(ALGLIB_INCLUDE_DIR linalg.h /usr/local/include/alglib ${CMAKE_SOURCE_DIR}/../3rdparty/alglib/include ) 
-FIND_LIBRARY(ALGLIB_LIBRARY alglibd /usr/local/lib/alglib ${CMAKE_SOURCE_DIR}/../3rdparty/alglib/lib/)
-
+FIND_PATH(ALGLIB_INCLUDE_DIR linalg.h /usr/local/include/alglib /usr/include/)
+FIND_LIBRARY(ALGLIB_LIBRARY alglib /usr/local/lib/alglib /usr/lib/x86_64-linux-gnu/)
 
 SET(ALGLIB_LIBRARIES ${ALGLIB_LIBRARY})
 SET(ALGLIB_INCLUDE_DIRS ${ALGLIB_INCLUDE_DIR})
