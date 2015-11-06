@@ -4550,7 +4550,7 @@ bool TemplateExplorationWidget::deformNearestPart(Match::Part& tmcPart, Match& n
                 OpenMesh::Vec3f& p_i = tMesh.point(vIt);
                 
                 OpenMesh::Vec3f scaleFactor = tmcPart.scale_ / nmcPart.scale_;
-                OpenMesh::Vec3f transToOrigin = nearestMatch.alignMtx() * p_i - nmcPart.pos_;
+                OpenMesh::Vec3f transToOrigin = mv(nearestMatch.alignMtx(), p_i) - nmcPart.pos_;
                 OpenMesh::Vec3f scaleToTemplate = transToOrigin * scaleFactor;
                 
                 OpenMesh::Vec3f newpoint = scaleToTemplate + tmcPart.pos_;
@@ -6079,7 +6079,7 @@ void TemplateExplorationWidget::slotOptimizeTemplate()
 				_T[5] = Q[j][1];
 				_T[10] = Q[j][2];
                 
-				OpenMesh::Vec3f p = tmParts[ tmConstraintsIt->partIndices_.first ].pos_ + _T * tmParts[ tmConstraintsIt->partIndices_.first ].scale_;
+				OpenMesh::Vec3f p = tmParts[ tmConstraintsIt->partIndices_.first ].pos_ + mv(_T, tmParts[ tmConstraintsIt->partIndices_.first ].scale_);
                 
 				for (int k = 0; k < 8; ++k)
 				{
@@ -6087,7 +6087,7 @@ void TemplateExplorationWidget::slotOptimizeTemplate()
 					_R[0] = Q[k][0];
 					_R[5] = Q[k][1];
 					_R[10] = Q[k][2];
-					OpenMesh::Vec3f q = tmParts[ tmConstraintsIt->partIndices_.second ].pos_ + _R * tmParts[ tmConstraintsIt->partIndices_.second ].scale_;
+					OpenMesh::Vec3f q = tmParts[ tmConstraintsIt->partIndices_.second ].pos_ + mv(_R,  tmParts[ tmConstraintsIt->partIndices_.second ].scale_);
 					double dis = (q - p).norm();
                     
 					if (dis < minDist)

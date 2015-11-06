@@ -231,7 +231,6 @@ static inline XForm<T> operator * (const XForm<T> &xf1, const XForm<T> &xf2)
 	);
 }
 
-
 // Component-wise equality and inequality (#include the usual caveats
 // about comparing floats for equality...)
 template <class T>
@@ -332,10 +331,9 @@ static inline void orthogonalize(XForm<T> &xf)
 	xf = M;
 }
 
-
 // Matrix-vector multiplication
 template <class S, class T>
-static inline const S operator * (const XForm<T> &xf, const S &v)
+static inline const S mv (const XForm<T> &xf, const S &v)
 {
 	T h = xf[3]*v[0] + xf[7]*v[1] + xf[11]*v[2]  + xf[15];
 	h = T(1) / h;

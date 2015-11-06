@@ -507,7 +507,7 @@ template<typename M> void MatchT<M>::save(QTextStream& _out)
         
         if(ALIGN_MATCH_POINTS_BEFORE_SAVING)
         {
-            OpenMesh::Vec3f alignedPos = alignMtx_ * itPoint->pos_;
+            OpenMesh::Vec3f alignedPos = mv(alignMtx_, itPoint->pos_);
             _out << alignedPos[0] << "," << alignedPos[1] << "," << alignedPos[2] << ",";
         }
         else
@@ -571,7 +571,7 @@ template <typename M> void MatchT<M>::alignMeshToTemplate()
     
     for (; vIt!=vEnd; ++vIt)
     {
-        ShapeT<M>::mesh_.set_point(vIt, alignMtx_ * ShapeT<M>::mesh_.point(vIt) );
+        ShapeT<M>::mesh_.set_point(vIt, mv(alignMtx_, ShapeT<M>::mesh_.point(vIt)) );
     }
     
     aligned_ = true;
@@ -1338,7 +1338,7 @@ template <typename M> void MatchT<M>::recalculateBoxes()
         
         for (; vIt!= vEnd; ++vIt)
         {
-            OpenMesh::Vec3f p_i = alignMtx_ * cMesh.point(vIt);
+            OpenMesh::Vec3f p_i = mv(alignMtx_, cMesh.point(vIt));
             
             cBBox.min.minimize(p_i);
             cBBox.max.maximize(p_i);
@@ -1359,7 +1359,7 @@ template <typename M> void MatchT<M>::Part::recalculateBox(const xform& _alignMt
     
     for (; vIt!= vEnd; ++vIt)
     {
-        OpenMesh::Vec3f p_i = _alignMtx * cMesh.point(vIt);
+        OpenMesh::Vec3f p_i = mv(_alignMtx, cMesh.point(vIt));
         
         cBBox.min.minimize(p_i);
         cBBox.max.maximize(p_i);
