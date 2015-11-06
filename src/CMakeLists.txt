@@ -86,4 +86,6 @@ target_link_libraries (${targetName}
 	${ALGLIB_LIBRARIES}
 )
 
+SET( CMAKE_CXX_FLAGS "-std=c++11 -w" )
+
 acg_print_configure_header(ShapeSynth "ShapeSynth")
