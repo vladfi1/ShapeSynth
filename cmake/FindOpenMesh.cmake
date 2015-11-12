@@ -12,9 +12,9 @@
 #  License text for the above reference.)
 
 
-FIND_PATH(OPENMESH_INCLUDE_DIR OpenMesh/Core/Mesh/TriMeshT.hh /usr/local/include ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/include) 
-FIND_LIBRARY(OPENMESH_CORE_LIBRARY OpenMeshCored /usr/local/lib/OpenMesh ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/lib)
-FIND_LIBRARY(OPENMESH_TOOLS_LIBRARY OpenMeshToolsd /usr/local/lib/OpenMesh ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/lib)
+FIND_PATH(OPENMESH_INCLUDE_DIR OpenMesh/Core/Mesh/TriMeshT.hh ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/include) 
+FIND_LIBRARY(OPENMESH_CORE_LIBRARY OpenMeshCored ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/lib)
+FIND_LIBRARY(OPENMESH_TOOLS_LIBRARY OpenMeshToolsd ${CMAKE_SOURCE_DIR}/../3rdparty/OpenMesh/lib)
 
 
 SET( OPENMESH_LIBRARIES ${OPENMESH_CORE_LIBRARY} ${OPENMESH_TOOLS_LIBRARY} )
