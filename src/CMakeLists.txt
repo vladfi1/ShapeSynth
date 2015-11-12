@@ -86,6 +86,6 @@ target_link_libraries (${targetName}
 	${ALGLIB_LIBRARIES}
 )
 
-SET( CMAKE_CXX_FLAGS "-std=c++11 -w -Wfatal-errors" )
+SET( CMAKE_CXX_FLAGS "-std=c++11 -w -Wl,-rpath-link,/usr/local/matlab-7sp1/bin/glnxa64/" )
 
 acg_print_configure_header(ShapeSynth "ShapeSynth")
